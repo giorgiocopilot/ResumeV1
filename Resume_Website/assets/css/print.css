@@ -1,0 +1,120 @@
+/* ============================================================
+   Print / Export-to-PDF stylesheet — A4, recruiter-friendly.
+   Black text on white, no chrome, searchable, clean page breaks.
+   ============================================================ */
+
+@page {
+  size: A4;
+  margin: 16mm 15mm;
+}
+
+@media print {
+  :root { color-scheme: light; }
+
+  html, body { background: #fff !important; color: #111 !important; }
+  body::before { display: none !important; }
+
+  /* Hide everything that is not the résumé */
+  .site-header, .site-nav, .scroll-progress, .cursor, .cursor-ring,
+  .hero-media, .scroll-hint, .metrics, .resume-gate, .resume-toolbar,
+  .contact, .site-footer, .fab-whatsapp, .hero-cta, .hero-note,
+  .hero-social, .chips, .skip-link {
+    display: none !important;
+  }
+
+  /* Show the résumé fully, no blur regardless of lock state */
+  .resume-wrap, .resume-wrap.locked { position: static !important; }
+  .resume-wrap.locked .resume,
+  .resume {
+    filter: none !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    user-select: auto !important;
+  }
+
+  main, .hero, .resume-wrap, .resume { max-width: none !important; margin: 0 !important; padding: 0 !important; }
+
+  /* Compact print header from hero text */
+  .hero { padding: 0 !important; }
+  .hero-grid { display: block !important; }
+  .hero-text { display: block !important; }
+  .eyebrow { color: #555 !important; letter-spacing: .2em; font-size: 9pt !important; }
+  .hero-name { font-size: 26pt !important; line-height: 1 !important; margin: 2mm 0 1mm !important; }
+  .hero-name .line { overflow: visible !important; }
+  .hero-name .line-inner { -webkit-text-fill-color: #111 !important; color: #111 !important; background: none !important; display: inline !important; transform: none !important; }
+  .hero-name .line { display: inline !important; }
+  .hero-name .line:first-child .line-inner::after { content: " "; }
+  .hero-headline { color: #1a56db !important; font-size: 12pt !important; margin-bottom: 2mm !important; }
+  .hero-summary { color: #333 !important; font-size: 9.5pt !important; max-width: none !important; margin-bottom: 3mm !important; }
+
+  /* Add a contact line at the very top via generated content */
+  .hero-text::after {
+    content: "Warsaw, Poland  ·  EU Work Rights  ·  Remote-first  ·  WhatsApp +48 577 654 530  ·  george@copilotadoption.uk  ·  linkedin.com/in/george-tsoupis-ai-program-manager  ·  Portfolio: copilotadoption.uk";
+    display: block; font-size: 8.5pt; color: #444; margin: 1mm 0 3mm; border-bottom: 1px solid #ccc; padding-bottom: 2mm;
+  }
+
+  .block { border: none !important; padding: 3mm 0 !important; }
+  .block-head { margin-bottom: 3mm !important; }
+  .block-index { color: #1a56db !important; font-size: 9pt !important; }
+  .block-title { color: #111 !important; font-size: 15pt !important; }
+
+  .exp-item {
+    background: none !important; border: none !important;
+    border-left: 2px solid #ddd !important; border-radius: 0 !important;
+    padding: 0 0 0 4mm !important; margin: 0 0 4mm !important;
+    break-inside: avoid; page-break-inside: avoid;
+  }
+  .exp-top { display: block !important; }
+  .exp-title { font-size: 11pt !important; color: #111 !important; }
+  .exp-company { color: #1a56db !important; }
+  .exp-dates { color: #555 !important; font-size: 9pt !important; }
+  .exp-loc { color: #666 !important; font-size: 9pt !important; }
+  .exp-lead { color: #222 !important; font-size: 9.5pt !important; margin: 1.5mm 0 !important; }
+  .exp-subhead { color: #1a56db !important; font-size: 8pt !important; margin: 2mm 0 1mm !important; }
+  .exp-bullets li { color: #222 !important; font-size: 9.5pt !important; padding-left: 4mm !important; break-inside: avoid; }
+  .exp-bullets li::before { background: #1a56db !important; width: 4px !important; height: 4px !important; top: 6px !important; }
+  .exp-bullets strong { color: #000 !important; }
+
+  /* Keep a role heading with its first bullet */
+  .exp-top, .exp-loc, .exp-lead, .exp-subhead { break-after: avoid; page-break-after: avoid; }
+
+  .tags { display: none !important; } /* keywords omitted from print for density; visible on web */
+
+  .earlier-list > li { border-left: 2px solid #ddd !important; break-inside: avoid; }
+  .earlier-title, .earlier-role strong { color: #111 !important; }
+  .earlier-meta { color: #666 !important; }
+  .earlier-meta .concurrent { color: #1a56db !important; }
+  .earlier-list p { color: #333 !important; font-size: 9pt !important; }
+
+  .skills-grid, .two-col { display: block !important; }
+  .skill-card {
+    background: none !important; border: none !important; padding: 0 !important; margin: 0 0 2mm !important;
+    break-inside: avoid;
+  }
+  .skill-card h3 { color: #111 !important; font-size: 10.5pt !important; margin-bottom: 1mm !important; }
+  .skill-card li { background: none !important; border: none !important; padding: 0 !important; color: #333 !important; font-size: 9pt !important; }
+  .skill-card ul { gap: 0 !important; }
+  .skill-card li::after { content: " · "; color: #999; }
+  .skill-card li:last-child::after { content: ""; }
+
+  /* Portfolio becomes a simple line */
+  #portfolio { break-inside: avoid; }
+  .portfolio-card { background: none !important; border: 1px solid #ccc !important; border-radius: 4px !important; padding: 3mm !important; }
+  .portfolio-card:hover { transform: none !important; box-shadow: none !important; }
+  .portfolio-copy h3 { color: #111 !important; font-size: 11pt !important; }
+  .portfolio-copy p { color: #333 !important; font-size: 9pt !important; }
+  .portfolio-link { color: #1a56db !important; }
+
+  .col-title { color: #1a56db !important; font-size: 9pt !important; }
+  .plain-list li { color: #222 !important; font-size: 9pt !important; break-inside: avoid; }
+  .plain-list li::before { background: #1a56db !important; }
+  .lang-list li { border-bottom: 1px solid #ddd !important; }
+  .lang-list span { color: #111 !important; }
+  .lang-list em { color: #555 !important; }
+
+  a { color: #1a56db !important; text-decoration: none !important; }
+
+  /* Page-break control between major blocks */
+  #experience { page-break-before: avoid; }
+  #skills, #about { page-break-inside: avoid; }
+}

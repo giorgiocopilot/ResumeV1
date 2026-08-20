@@ -1,0 +1,105 @@
+{
+  "profile": {
+    "name": "Giorgio Tsoupis",
+    "displayName": "Giorgio (George) Tsoupis",
+    "headline": "Enterprise AI Adoption & Transformation Program Manager",
+    "location": "Warsaw, Poland",
+    "workRights": "EU Work Rights",
+    "workModel": "Remote-first",
+    "availability": "Available from June 2026",
+    "summary": "Enterprise AI adoption leader who scales Microsoft 365 Copilot from pilot to governed production across four continents, influencing over one million users and sustaining up to 98% active adoption. I turn AI strategy into measurable business value through stakeholder alignment, adoption telemetry, compliance-by-design governance, and role-based enablement, moving AI beyond proof-of-concept into outcomes organizations can own and continuously improve.",
+    "contact": {
+      "whatsapp": "+48577654530",
+      "whatsappDisplay": "+48 577 654 530",
+      "whatsappMessage": "Hello Giorgio, I viewed your résumé and would like to discuss an opportunity.",
+      "email": "george@copilotadoption.uk",
+      "emailSubject": "Opportunity for Giorgio Tsoupis",
+      "emailBody": "Hello Giorgio, I viewed your résumé and would like to discuss an opportunity.",
+      "linkedin": "https://www.linkedin.com/in/george-tsoupis-ai-program-manager/",
+      "website": "https://www.copilotadoption.uk",
+      "github": "https://github.com/giorgiocopilot"
+    },
+    "languages": [
+      { "language": "English", "level": "Full Professional" },
+      { "language": "Italian", "level": "Native / Bilingual" },
+      { "language": "Greek", "level": "Native / Bilingual" },
+      { "language": "Spanish", "level": "Learning" }
+    ]
+  },
+  "metrics": [
+    { "value": 98, "suffix": "%", "label": "Active adoption sustained" },
+    { "value": 1, "suffix": "M+", "label": "Users influenced" },
+    { "value": 30000, "suffix": "+", "label": "Enterprise seats in program scope" },
+    { "value": 224000, "suffix": "+", "label": "Copilot actions logged" }
+  ],
+  "experience": [
+    {
+      "role": "Copilot Adoption Lead",
+      "company": "Hilti Corporation",
+      "location": "Schaan, Liechtenstein (Remote)",
+      "start": "Sep 2025",
+      "end": "Present",
+      "lead": "Led the enterprise-wide Microsoft 365 Copilot adoption program for a complex global manufacturer operating in 120+ countries and all major markets, overseeing an €11M+ AI investment and delivering one of Europe's largest Copilot rollouts in 2025.",
+      "responsibilities": [
+        "Delivered key outcomes: 98% active usage across licensed cohorts, 62% of employees using Copilot multiple times daily, 70% reporting 30 to 120 minutes saved per week, and 98% of business units retaining licenses at full cost, with 224,000+ Copilot actions logged and a 9.36 out of 10 end-user importance score.",
+        "Designed and ran an ADKAR-based change program, applying Kotter 8-Step to secure executive sponsorship and cultural embedding, mapping 30,000 employees into five readiness zones and achieving 70% daily active usage in Month 1 against a 60% target.",
+        "Architected pre-deployment governance with Microsoft Purview, DLP, sensitivity labels, and SharePoint access reviews, supported by technical, data, and organizational readiness audits, with zero compliance or security incidents.",
+        "Defined a company-wide Copilot prompt standard and role libraries for eight key functions, built a 1:50 cross-functional Champion Network, and instituted monthly Copilot business impact reports.",
+        "Achieved 90%+ training completion in Month 1 against a 75% target, establishing the adoption foundation for the organization's June 2026 announcement of Microsoft Copilot Premium for every employee globally, a program that exceeded the UK Government Digital Service's 20,000 Copilot Premium deployment."
+      ],
+      "skills": ["Microsoft 365 Copilot", "Prosci ADKAR", "Kotter 8-Step", "Microsoft Purview", "SharePoint governance", "Viva Insights", "Prompt engineering", "Champion Network design", "Executive communication", "ROI analysis", "Stakeholder management", "Enterprise AI adoption", "Organizational change"]
+    },
+    {
+      "role": "Global Microsoft 365 Copilot Program Manager",
+      "company": "Microsoft Corporation",
+      "location": "Redmond, Washington (Remote)",
+      "start": "Nov 2024",
+      "end": "Aug 2025",
+      "lead": "Drove AI-powered automation and operational efficiency across global teams supporting Microsoft 365 Copilot activation, growth, and renewal.",
+      "responsibilities": [
+        "Operationalized Copilot Studio and Power Platform workflows in a 700+ engineer environment, reducing support ticket costs by 72% while maintaining service continuity.",
+        "Aligned AI delivery with business KPIs and service metrics, translating operational signals into executive-ready decision inputs for Microsoft 365 Copilot activation, growth, and renewal.",
+        "Coordinated execution across Microsoft and partner teams, improving rollout consistency, stakeholder alignment, and operational readiness.",
+        "Contributed to evaluation of AI pipeline options across Azure AI Foundry and related environments to inform Copilot Studio integration and LLM deployment decisions."
+      ],
+      "skills": ["Copilot Studio", "Power Platform", "Process automation", "Executive reporting", "KPI definition", "Azure AI Foundry"]
+    },
+    {
+      "role": "Global Business Development Manager, Microsoft Channel",
+      "company": "Noventiq (formerly Softline)",
+      "location": "London, United Kingdom (Remote)",
+      "start": "Dec 2022",
+      "end": "Dec 2024",
+      "lead": "Drove Microsoft's global CSP business development across 14 companies within the Noventiq group, integrating Microsoft 365 Copilot and AI solutions into go-to-market.",
+      "responsibilities": [
+        "Established Microsoft 365 Copilot delivery across 55+ countries and 14 companies, providing consistent regional coordination in the global CSP channel.",
+        "Operationalized adoption and expansion go-to-market programs with structured execution controls, improving conversion rates and reducing acquisition costs.",
+        "Contributed to 33% year-over-year gross profit growth by coaching a global remote sales and technical team, improving productivity and customer retention.",
+        "Standardized enablement through multilingual Copilot handbooks and virtual programs, improving readiness across distributed teams."
+      ],
+      "skills": ["Global GTM", "CSP channel", "Copilot enablement", "Team coaching", "Revenue growth"]
+    }
+  ],
+  "earlierExperience": [
+    { "role": "Cloud Partner Development Manager", "company": "Microsoft Corporation", "location": "Central & Eastern Europe", "start": "Jul 2017", "end": "Apr 2020", "note": "Activated 100+ ISVs and 90 SMB providers, contributing to 100%+ Azure consumption growth; 11 consecutive quarters of quota attainment." },
+    { "role": "Senior Partnerships Development Manager", "company": "InterWorks.Cloud", "location": "Athens, Greece", "start": "Mar 2020", "end": "Nov 2022", "note": "Increased revenue by 30% and onboarded 150+ channel partners and ISVs. Concurrent with the Huawei part-time role." },
+    { "role": "Regional Business Development Manager (Part-Time)", "company": "Huawei Consumer Business Group", "location": "Warsaw, Poland", "start": "Apr 2020", "end": "Dec 2021", "note": "Grew monthly active users by 87.5% and revenue by 40% across 13 countries. Concurrent with the InterWorks.Cloud role." }
+  ],
+  "skillGroups": [
+    { "name": "Enterprise AI Adoption", "skills": ["Microsoft 365 Copilot", "Copilot Studio", "Copilot Chat", "Champion Communities", "ADKAR Change Enablement", "Kotter 8-Step"] },
+    { "name": "AI Governance & Operating Models", "skills": ["License Governance", "Responsible AI Controls", "Compliance-by-Design", "Microsoft Purview", "EU Data Boundary Awareness", "Adoption Policies"] },
+    { "name": "Program & Product Execution", "skills": ["PoC-to-Production Delivery", "KPI Definition", "Executive Reporting", "Stakeholder Alignment", "Roadmap Ownership", "Backlog Prioritization"] },
+    { "name": "Technical Fluency", "skills": ["Telemetry & Adoption Analytics", "Viva Insights", "Power Platform", "Microsoft Entra", "Azure AI Foundry", "LLM Applications"] }
+  ],
+  "projects": [
+    { "name": "AI Keynote Talks & Training Portfolio", "desc": "Keynotes, workshops, and enablement programs delivered to enterprise audiences on Copilot adoption and change management.", "url": "https://www.copilotadoption.uk" },
+    { "name": "Executive Portfolio: Influencing 1M+ Seats", "desc": "Executive-facing portfolio evidencing program management impact across large-scale Copilot deployments.", "url": "https://www.copilotadoption.uk" }
+  ],
+  "education": [
+    { "degree": "Master's Degree in International Relations", "institution": "" }
+  ],
+  "certifications": [
+    { "group": "Microsoft Copilot & AI", "items": ["Microsoft Copilot Sales Champion", "Copilot for Microsoft 365 Technical Champion", "Copilot Partner Bootcamp", "Microsoft 365 Business Value Sales Proficiency Badge", "Implement Copilot for Microsoft 365", "Fundamental AI Concepts", "Career Essentials in Generative AI", "Building in Microsoft Copilot Studio", "Learning Microsoft 365 Copilot (2024)"] },
+    { "group": "Change Management & Leadership", "items": ["Management Excellence at Microsoft: Model, Coach, Care", "Persuasive Coaching: Coaching with Influence", "Working in Harmony as a Senior Team"] }
+  ]
+}
