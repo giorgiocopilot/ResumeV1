@@ -30,30 +30,34 @@
 
 <style>
 /* ===== Impact counters — CSS counter animation (no JS number formatting) ===== */
-@property --impact-trained { syntax: "<integer>"; initial-value: 0; inherits: false; }
-@property --impact-saved   { syntax: "<integer>"; initial-value: 0; inherits: false; }
+@property --impact-trained { syntax: "<integer>"; initial-value: 1; inherits: false; }
+@property --impact-saved   { syntax: "<integer>"; initial-value: 1; inherits: false; }
+
+/* Close the dead space between the hero scroll hint and the counters */
+.hero { min-height: 92vh; }
 
 /* Two cards share the width of the old four-box row, never exceeding it */
 .metrics-duo {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   max-width: 760px;
-  margin-inline: auto;
+  margin: -2rem auto 0; /* pull the row up toward the scroll hint */
+  padding-top: 2rem;
 }
 .metric-impact .metric-value {
   white-space: nowrap;
-  font-size: clamp(1.75rem, 4vw, 3rem); /* keeps row height <= old boxes */
+  font-size: clamp(1.5rem, 3.2vw, 2.75rem); /* one line, row height <= old boxes */
 }
 
-/* Static fallback (no-JS / reduced motion) is replaced by the animated counter once running */
+/* Static fallback (no-JS) is replaced by the animated counter once running */
 .metrics-duo.impact-run .impact-fallback { display: none; }
 
 .metrics-duo.impact-run .impact-count-trained {
-  animation: impactCountTrained 2.6s cubic-bezier(.22,.61,.36,1) both;
+  animation: impactCountTrained 5s cubic-bezier(.22,.61,.36,1) both;
   counter-reset: impactN var(--impact-trained);
 }
 .metrics-duo.impact-run .impact-count-saved {
-  animation: impactCountSaved 2.6s cubic-bezier(.22,.61,.36,1) both;
+  animation: impactCountSaved 5s cubic-bezier(.22,.61,.36,1) both;
   counter-reset: impactN var(--impact-saved);
 }
 .metrics-duo.impact-run .impact-count::after {
@@ -66,15 +70,15 @@
 .metrics-duo.impact-run .impact-count-trained::after { content: counter(impactN) ",000+"; }
 .metrics-duo.impact-run .impact-count-saved::after   { content: counter(impactN) ",600 hr"; }
 
-@keyframes impactCountTrained { from { --impact-trained: 0; } to { --impact-trained: 38; } }
-@keyframes impactCountSaved   { from { --impact-saved: 0; }   to { --impact-saved: 2721; } }
+@keyframes impactCountTrained { from { --impact-trained: 1; } to { --impact-trained: 38; } }
+@keyframes impactCountSaved   { from { --impact-saved: 1; }   to { --impact-saved: 2721; } }
 
 @media (max-width: 640px) {
-  .metrics-duo { grid-template-columns: 1fr; }
+  .metrics-duo { grid-template-columns: 1fr; margin-top: 0; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .metrics-duo.impact-run .impact-fallback { display: inline; }
-  .metrics-duo.impact-run .impact-count::after { content: none; }
+  .metrics-duo.impact-run .impact-count-trained,
+  .metrics-duo.impact-run .impact-count-saved { animation-duration: 1.2s; }
 }
 </style>
 
@@ -394,20 +398,48 @@
 
 <script src="assets/js/main.js" defer></script>
 <script>
-/* Impact counters: start the CSS-counter animation when the stats scroll into view.
-   Without JS (or with reduced motion) the static final values stay visible. */
+/* Impact counters: count up when the stats scroll into view.
+   Primary path: pure CSS counter animation (@property + keyframes + counter-reset).
+   Fallback path (browsers without @property): rAF-driven text update.
+   Reduced motion: same animation, shortened to 1.2s. */
 (function () {
   var section = document.getElementById('impactStats');
   if (!section) return;
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var DURATION = reduced ? 1200 : 5000;
+
+  function jsCount() {
+    var items = [
+      { el: section.querySelector('.impact-count-trained .impact-fallback'), target: 38000, suffix: '+' },
+      { el: section.querySelector('.impact-count-saved .impact-fallback'),   target: 2721600, suffix: ' hr' }
+    ];
+    var t0 = null;
+    function tick(t) {
+      if (!t0) t0 = t;
+      var p = Math.min((t - t0) / DURATION, 1);
+      var e = 1 - Math.pow(1 - p, 3);
+      items.forEach(function (it) {
+        it.el.textContent = Math.round(1 + e * (it.target - 1)).toLocaleString('en-US') + it.suffix;
+      });
+      if (p < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+
+  function start() {
+    if (window.CSS && typeof CSS.registerProperty === 'function') {
+      section.classList.add('impact-run');
+    } else {
+      jsCount();
+    }
+  }
+
   var io = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
-      if (entry.isIntersecting) {
-        section.classList.add('impact-run');
-        io.disconnect();
-      }
+      if (entry.isIntersecting) { start(); io.disconnect(); }
     });
-  }, { threshold: 0.35 });
+  }, { threshold: 0.2 });
   io.observe(section);
 })();
 </script>
