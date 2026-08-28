@@ -17,17 +17,17 @@
 <meta property="og:url" content="https://www.copilotadoption.uk/" />
 <meta name="twitter:card" content="summary_large_image" />
 
-assets/img/favicon.svg
-pg" />
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="assets/img/avatar-512.jpg" />
 
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
 
-assets/css/styles.css
-hero-blend.css" />
-assets/css/print.css
+<link rel="stylesheet" href="assets/css/styles.css" />
+<link rel="stylesheet" href="assets/css/hero-blend.css" />
+<link rel="stylesheet" href="assets/css/print.css" media="print" />
 
 <style>
 /* ===== Impact counters — CSS counter animation (no JS number formatting) ===== */
@@ -102,7 +102,7 @@ assets/css/print.css
 </script>
 </head>
 <body>
-#experience
+<a class="skip-link" href="#experience">Skip to résumé content</a>
 
 <!-- Scroll progress -->
 <div class="scroll-progress" aria-hidden="true"><span id="progressBar"></span></div>
@@ -113,14 +113,15 @@ assets/css/print.css
 
 <!-- Header -->
 <header class="site-header" id="siteHeader">
-  #top
+  <a href="#top" class="brand" data-cursor="link">
     <span class="brand-mark">GT</span>
     <span class="brand-name">Giorgio Tsoupis</span>
   </a>
   <nav class="site-nav" aria-label="Primary">
-    #experience
-    #skills
-    <a href    #contact
+    <a href="#experience" data-cursor="link">Work</a>
+    <a href="#skills" data-cursor="link">Skills</a>
+    <a href="#about" data-cursor="link">About</a>
+    <a href="#contact" data-cursor="link">Contact</a>
     <button type="button" class="nav-pdf" id="navPdf" data-cursor="link">Download CV</button>
   </nav>
 </header>
@@ -145,10 +146,12 @@ assets/css/print.css
         </ul>
         <div class="hero-cta reveal" data-reveal>
           <a class="btn btn-primary" id="ctaWhatsapp" href="#" data-cursor="cta">
-            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M12.04 2c-5.5 0-9.96 4.46-9.96 9.96 0 1.76.46 3.45 1.34 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.5 0 9.96-4.46 9.96-9.96S17.54 2 12.04 2zm5.8 14.06c-.24.68-1.4 1.32-1.94 1.36-.5.05-.97.24-3.27-.68-2.76-1.09-4.5-3.94-4.64-4.13-.14-.19-1.11-1.48-1.11-2.82 0-1.34.7-2 .95-2.27.24-.27.53-.34.71-.34.18 0 .36 0 .51.01.16.01.39-.06.6.46.24.58.82 2 .89 2.14.07.14.12.31.02.5-.09.19-.14.31-.28.48-.14.17-.29.37-.42.5-.14.14-.28.29-.12.56.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.37.27.14.43.12.59-.07.16-.19.68-.79.86-1.06.18-.27.36-.22.6-.13.24.09 1.55.73 1.82.86.27p &amp; view full résumé
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M12.04 2c-5.5 0-9.96 4.46-9.96 9.96 0 1.76.46 3.45 1.34 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.5 0 9.96-4.46 9.96-9.96S17.54 2 12.04 2zm5.8 14.06c-.24.68-1.4 1.32-1.94 1.36-.5.05-.97.24-3.27-.68-2.76-1.09-4.5-3.94-4.64-4.13-.14-.19-1.11-1.48-1.11-2.82 0-1.34.7-2 .95-2.27.24-.27.53-.34.71-.34.18 0 .36 0 .51.01.16.01.39-.06.6.46.24.58.82 2 .89 2.14.07.14.12.31.02.5-.09.19-.14.31-.28.48-.14.17-.29.37-.42.5-.14.14-.28.29-.12.56.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.37.27.14.43.12.59-.07.16-.19.68-.79.86-1.06.18-.27.36-.22.6-.13.24.09 1.55.73 1.82.86.27.14.45.2.51.31.07.12.07.66-.17 1.34z"/></svg>
+            Send WhatsApp &amp; view full résumé
           </a>
           <a class="btn btn-secondary" id="ctaEmail" href="#" data-cursor="cta">
-            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2        Send email &amp; view full résumé
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm8 7L4.5 6.5v.01L12 11l7.5-4.49V6.5L12 11z"/></svg>
+            Send email &amp; view full résumé
           </a>
         </div>
         <p class="hero-note reveal" data-reveal>Clicking a button opens your own WhatsApp or email app with a pre-filled message and reveals the full résumé on this page. It does <strong>not</strong> send anything automatically. No tracking, cookies, or third-party scripts are used.</p>
@@ -166,7 +169,9 @@ assets/css/print.css
 
           <!-- Original photo — face & hair untouched, edges feathered in the PNG -->
           <img
-           ait-blend.png />
+            src="assets/img/portrait-blend.png"
+            alt="Portrait of Giorgio Tsoupis in a blue suit"
+            width="1366" height="2048" loading="eager" decoding="async" />
 
           <!-- Orbital accent ring -->
           <svg class="hero-orbit" viewBox="0 0 100 100" aria-hidden="true">
@@ -185,8 +190,7 @@ assets/css/print.css
           <!-- Floating credibility micro-card -->
           <div class="hero-tag" aria-hidden="true">
             <span class="tag-ico">
-              <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor"
-                d="M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4L12 2z"/></svg>
             </span>
             <span>
               <span class="tag-title">AI Adoption at Scale</span><br>
@@ -220,8 +224,8 @@ assets/css/print.css
         <h2 class="gate-title">Reveal the complete résumé</h2>
         <p class="gate-text">Choose how you would like to reach out. Either button unlocks the entire résumé below and opens a pre-filled message in your own app. Nothing is sent automatically.</p>
         <div class="gate-cta">
-          #Message on WhatsApp &amp; unlock</a>
-          #
+          <a class="btn btn-primary" id="gateWhatsapp" href="#" data-cursor="cta">Message on WhatsApp &amp; unlock</a>
+          <a class="btn btn-secondary" id="gateEmail" href="#" data-cursor="cta">Email &amp; unlock</a>
         </div>
         <button type="button" class="gate-skip" id="gateSkip" data-cursor="link">Just view the résumé</button>
       </div>
@@ -236,7 +240,8 @@ assets/css/print.css
           <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 3v10.5l3.5-3.5 1.4 1.4-5.9 5.9-5.9-5.9L6.5 10 10 13.5V3h2zM5 19h14v2H5z"/></svg>
           Export to PDF
         </button>
-        /e53bcdeb6d7a4b50a27a0711dd6d751f@externals.hilti.com?anonymous&ismsaljsauthenabled&ep=bwmEmailSignature"
+        <a class="btn btn-primary" id="bookCallBtn" data-cursor="cta"
+           href="https://outlook.office.com/bookwithme/user/e53bcdeb6d7a4b50a27a0711dd6d751f@externals.hilti.com?anonymous&ismsaljsauthenabled&ep=bwmEmailSignature"
            target="_blank" rel="noopener noreferrer">
           <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 16H5V10h14v10zM5 8V6h14v2H5z"/></svg>
           Book a Call
@@ -336,7 +341,7 @@ assets/css/print.css
           <span class="block-index">03</span>
           <h2 id="portfolio-h" class="block-title">Portfolio</h2>
         </header>
-        " target="_blank" rel="noopener noreferrer" data-reveal data-cursor="cta">
+        <a class="portfolio-card" href="https://www.copilotadoption.uk" target="_blank" rel="noopener noreferrer" data-reveal data-cursor="cta">
           <div class="portfolio-copy">
             <h3>copilotadoption.uk</h3>
             <p>Keynotes, workshops, enablement programs, and case studies on Microsoft&nbsp;365 Copilot adoption and change management. Visit the full portfolio and speaking page.</p>
@@ -396,8 +401,8 @@ assets/css/print.css
     <p class="eyebrow reveal" data-reveal>Get in touch</p>
     <h2 id="contact-h" class="contact-title reveal" data-reveal>Let's discuss your Copilot adoption</h2>
     <div class="contact-cta reveal" data-reveal>
-      #
-      #
+      <a class="btn btn-primary btn-lg" id="footerWhatsapp" href="#" data-cursor="cta">Message on WhatsApp</a>
+      <a class="btn btn-secondary btn-lg" id="footerEmail" href="#" data-cursor="cta">Send an email</a>
     </div>
     <p class="contact-alt reveal" data-reveal>WhatsApp <span id="waNumber">+48 577 654 530</span> · <a href="mailto:george@copilotadoption.uk" data-cursor="link">george@copilotadoption.uk</a></p>
   </section>
@@ -408,7 +413,7 @@ assets/css/print.css
       <div class="footer-links">
         <a href="privacy.html" data-cursor="link">Privacy</a>
         <a href="https://www.copilotadoption.uk" target="_blank" rel="noopener noreferrer" data-cursor="link">copilotadoption.uk</a>
-        #top
+        <a href="#top" data-cursor="link">Back to top ↑</a>
       </div>
     </div>
   </footer>
@@ -416,11 +421,11 @@ assets/css/print.css
 </main>
 
 <!-- Floating WhatsApp -->
-#Message Giorgio on WhatsApp" data-cursor="cta">
+<a class="fab-whatsapp" id="fabWhatsapp" href="#" aria-label="Message Giorgio on WhatsApp" data-cursor="cta">
   <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path fill="currentColor" d="M12.04 2c-5.5 0-9.96 4.46-9.96 9.96 0 1.76.46 3.45 1.34 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.5 0 9.96-4.46 9.96-9.96S17.54 2 12.04 2zm5.8 14.06c-.24.68-1.4 1.32-1.94 1.36-.5.05-.97.24-3.27-.68-2.76-1.09-4.5-3.94-4.64-4.13-.14-.19-1.11-1.48-1.11-2.82 0-1.34.7-2 .95-2.27.24-.27.53-.34.71-.34.18 0 .36 0 .51.01.16.01.39-.06.6.46.24.58.82 2 .89 2.14.07.14.12.31.02.5-.09.19-.14.31-.28.48-.14.17-.29.37-.42.5-.14.14-.28.29-.12.56.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.37.27.14.43.12.59-.07.16-.19.68-.79.86-1.06.18-.27.36-.22.6-.13.24.09 1.55.73 1.82.86.27.14.45.2.51.31.07.12.07.66-.17 1.34z"/></svg>
 </a>
 
-assets/js/main.js
+<script src="assets/js/main.js" defer></script>
 <script>
 /* Impact counters: count up when the stats scroll into view.
    Primary path: pure CSS counter animation (@property + keyframes + counter-reset).
