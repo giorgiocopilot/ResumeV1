@@ -1,0 +1,119 @@
+/* =========================================================================
+   hero-blend.css  —  Frameless duotone portrait blend for the hero section
+   Load AFTER styles.css so these rules win the cascade.
+   Nothing here touches the face/hair pixels: the subject PNG is the original
+   photo (feathered at the outer edges only); the tinted look comes from a
+   scene layer that sits BEHIND the subject plus ambient CSS glows.
+   ========================================================================= */
+
+/* Right column becomes a layered stage instead of a bordered card */
+.hero-media {
+  position: relative;
+  min-height: 620px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+}
+
+/* Neutralise the old frame styles from styles.css */
+.hero-media .portrait-frame {
+  background: none !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  padding: 0 !important;
+  overflow: visible;
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+}
+
+/* Ambient radial glow that bleeds behind the subject (violet -> cyan) */
+.hero-media .portrait-frame::before {
+  content: "";
+  position: absolute;
+  inset: -18% -12% -10% -12%;
+  z-index: 0;
+  background:
+    radial-gradient(60% 55% at 55% 42%, rgba(139, 92, 246, 0.35), transparent 70%),
+    radial-gradient(45% 40% at 70% 65%, rgba(34, 211, 238, 0.18), transparent 75%);
+  filter: blur(24px);
+  pointer-events: none;
+}
+
+/* Duotone environment layer (behind the subject) */
+.hero-scene {
+  position: absolute;
+  z-index: 1;
+  inset: -6% -8% 0 -8%;
+  background: center / contain no-repeat url("../img/portrait-scene.png");
+  filter: blur(2px) saturate(1.05);
+  opacity: 0.85;
+  pointer-events: none;
+  mix-blend-mode: screen;      /* melts the tinted scene into the dark page */
+}
+
+/* The real photo — original colours, feathered edges baked into the PNG */
+.hero-media .portrait-frame img {
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0;
+  box-shadow: none;
+  /* extra soft feather in case the viewport crops the PNG */
+  -webkit-mask-image: radial-gradient(120% 130% at 50% 42%, #000 62%, transparent 96%);
+          mask-image: radial-gradient(120% 130% at 50% 42%, #000 62%, transparent 96%);
+}
+
+/* Kill the old glow element if it exists in the markup */
+.hero-media .portrait-glow { display: none !important; }
+
+/* Orbital accent ring (AI-at-scale motif) */
+.hero-orbit {
+  position: absolute;
+  z-index: 3;
+  inset: -6%;
+  pointer-events: none;
+  animation: heroOrbitSpin 40s linear infinite;
+}
+.hero-orbit circle { fill: none; stroke: url(#heroOrbitGrad); stroke-width: 1.2; }
+.hero-orbit .node  { fill: #22d3ee; filter: drop-shadow(0 0 5px #22d3ee); }
+@keyframes heroOrbitSpin { to { transform: rotate(360deg); } }
+
+/* Floating credibility micro-card */
+.hero-tag {
+  position: absolute;
+  z-index: 4;
+  right: 4%;
+  bottom: 2%;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.7rem 1rem;
+  border-radius: 14px;
+  background: rgba(16, 22, 40, 0.55);
+  border: 1px solid rgba(120, 180, 255, 0.22);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+}
+.hero-tag .tag-ico {
+  width: 34px; height: 34px; border-radius: 9px;
+  display: grid; place-items: center;
+  background: linear-gradient(135deg, #8b5cf6, #22d3ee);
+  color: #0a0e1a; flex: none;
+}
+.hero-tag .tag-title { font-weight: 600; font-size: 0.9rem; color: #eaf0ff; }
+.hero-tag .tag-sub   { font-size: 0.78rem; color: #9fb2d6; }
+
+@media (max-width: 700px) {
+  .hero-media { min-height: 460px; }
+  .hero-tag   { right: 2%; bottom: 0; transform: scale(0.9); }
+  .hero-orbit { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-orbit { animation: none; }
+}
