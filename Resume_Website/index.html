@@ -28,6 +28,56 @@
 <link rel="stylesheet" href="assets/css/styles.css" />
 <link rel="stylesheet" href="assets/css/print.css" media="print" />
 
+<style>
+/* ===== Impact counters — CSS counter animation (no JS number formatting) ===== */
+@property --impact-trained { syntax: "<integer>"; initial-value: 0; inherits: false; }
+@property --impact-saved   { syntax: "<integer>"; initial-value: 0; inherits: false; }
+
+/* Two cards share the width of the old four-box row, never exceeding it */
+.metrics-duo {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 760px;
+  margin-inline: auto;
+}
+.metric-impact .metric-value {
+  white-space: nowrap;
+  font-size: clamp(1.75rem, 4vw, 3rem); /* keeps row height <= old boxes */
+}
+
+/* Static fallback (no-JS / reduced motion) is replaced by the animated counter once running */
+.metrics-duo.impact-run .impact-fallback { display: none; }
+
+.metrics-duo.impact-run .impact-count-trained {
+  animation: impactCountTrained 2.6s cubic-bezier(.22,.61,.36,1) both;
+  counter-reset: impactN var(--impact-trained);
+}
+.metrics-duo.impact-run .impact-count-saved {
+  animation: impactCountSaved 2.6s cubic-bezier(.22,.61,.36,1) both;
+  counter-reset: impactN var(--impact-saved);
+}
+.metrics-duo.impact-run .impact-count::after {
+  display: inline-block;
+  background: linear-gradient(135deg, #8b5cf6 0%, #22d3ee 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.metrics-duo.impact-run .impact-count-trained::after { content: counter(impactN) ",000+"; }
+.metrics-duo.impact-run .impact-count-saved::after   { content: counter(impactN) ",600 hr"; }
+
+@keyframes impactCountTrained { from { --impact-trained: 0; } to { --impact-trained: 38; } }
+@keyframes impactCountSaved   { from { --impact-saved: 0; }   to { --impact-saved: 2721; } }
+
+@media (max-width: 640px) {
+  .metrics-duo { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .metrics-duo.impact-run .impact-fallback { display: inline; }
+  .metrics-duo.impact-run .impact-count::after { content: none; }
+}
+</style>
+
 <!-- Structured data -->
 <script type="application/ld+json">
 {
@@ -121,23 +171,15 @@
     <div class="scroll-hint" aria-hidden="true"><span>Scroll</span><i></i></div>
   </section>
 
-  <!-- METRICS -->
-  <section class="metrics" aria-label="Key results">
-    <div class="metric" data-reveal>
-      <div class="metric-value" data-count="98" data-suffix="%">0</div>
-      <div class="metric-label">Active adoption sustained</div>
+  <!-- METRICS: two animated CSS counters (replaces the four stat boxes) -->
+  <section class="metrics metrics-duo" id="impactStats" aria-label="Key results">
+    <div class="metric metric-impact" data-reveal>
+      <div class="metric-value impact-count impact-count-trained"><span class="impact-fallback">38,000+</span></div>
+      <div class="metric-label">Professionals Trained</div>
     </div>
-    <div class="metric" data-reveal>
-      <div class="metric-value" data-count="1" data-suffix="M+">0</div>
-      <div class="metric-label">Users influenced</div>
-    </div>
-    <div class="metric" data-reveal>
-      <div class="metric-value" data-count="30000" data-suffix="+" data-format="k">0</div>
-      <div class="metric-label">Seats in program scope</div>
-    </div>
-    <div class="metric" data-reveal>
-      <div class="metric-value" data-count="224000" data-suffix="+" data-format="k">0</div>
-      <div class="metric-label">Copilot actions logged</div>
+    <div class="metric metric-impact" data-reveal>
+      <div class="metric-value impact-count impact-count-saved"><span class="impact-fallback">2,721,600 hr</span></div>
+      <div class="metric-label">Annual Time Saved</div>
     </div>
   </section>
 
@@ -164,11 +206,13 @@
         <button type="button" class="btn btn-ghost" id="pdfBtn" data-cursor="cta">
           <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 3v10.5l3.5-3.5 1.4 1.4-5.9 5.9-5.9-5.9L6.5 10 10 13.5V3h2zM5 19h14v2H5z"/></svg>
           Export to PDF
-        </button><a href="https://outlook.office.com/bookwithme/user/e53bcdeb6d7a4b50a27a0711dd6d751f@externals.hilti.com?anonymous&amp;ismsaljsauthenabled&amp;ep=bwmEmailSignature"
-   target="_blank" rel="noopener noreferrer"
-   class="SAME-CLASS-AS-EXPORT-BUTTON">
-   Book a Call
-</a>
+        </button>
+        <a class="btn btn-primary" id="bookCallBtn" data-cursor="cta"
+           href="https://outlook.office.com/bookwithme/user/e53bcdeb6d7a4b50a27a0711dd6d751f@externals.hilti.com?anonymous&amp;ismsaljsauthenabled&amp;ep=bwmEmailSignature"
+           target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 16H5V10h14v10zM5 8V6h14v2H5z"/></svg>
+          Book a Call
+        </a>
       </div>
 
       <!-- EXPERIENCE -->
@@ -349,5 +393,23 @@
 </a>
 
 <script src="assets/js/main.js" defer></script>
+<script>
+/* Impact counters: start the CSS-counter animation when the stats scroll into view.
+   Without JS (or with reduced motion) the static final values stay visible. */
+(function () {
+  var section = document.getElementById('impactStats');
+  if (!section) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        section.classList.add('impact-run');
+        io.disconnect();
+      }
+    });
+  }, { threshold: 0.35 });
+  io.observe(section);
+})();
+</script>
 </body>
 </html>
