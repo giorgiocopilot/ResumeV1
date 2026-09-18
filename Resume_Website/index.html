@@ -81,6 +81,18 @@
   .metrics-duo.impact-run .impact-count-trained,
   .metrics-duo.impact-run .impact-count-saved { animation-duration: 1.2s; }
 }
+
+/* ===== 05 · References & Peer Validation ===== */
+.references-intro{max-width:44rem;margin:0 0 2rem;color:var(--text-muted,#9ca3af);font-size:1rem;line-height:1.65}
+.references-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+.reference-card{display:flex;flex-direction:column;min-height:21rem;padding:1.5rem;border:1px solid rgba(255,255,255,.10);border-radius:1rem;background:rgba(255,255,255,.035)}
+.reference-tag{display:inline-flex;width:max-content;margin-bottom:1.15rem;padding:.38rem .62rem;border:1px solid rgba(34,211,238,.35);border-radius:999px;color:#22d3ee;font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.reference-quote{flex:1;margin:0;color:#e6edf7;font-size:.96rem;line-height:1.68}
+.reference-quote::before{content:"\201C";color:#8b5cf6;font-size:2rem;font-weight:700;line-height:0;vertical-align:-.4rem;margin-right:.15rem}
+.reference-name{margin-top:1.5rem;color:#fff;font-weight:700}
+.reference-role{margin:.2rem 0 0;color:var(--text-muted,#9ca3af);font-size:.8rem;line-height:1.45}
+.references-footer{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-top:1.5rem;color:var(--text-muted,#9ca3af);font-size:.83rem}
+@media(max-width:800px){.references-grid{grid-template-columns:1fr}.reference-card{min-height:auto}}
 </style>
 
 <!-- Structured data -->
@@ -391,6 +403,39 @@
               <li>Working in Harmony as a Senior Team</li>
             </ul>
           </div>
+        </div>
+      </section>
+
+      <!-- REFERENCES & PEER VALIDATION -->
+      <section id="references" class="block" aria-labelledby="references-h">
+        <header class="block-head" data-reveal>
+          <span class="block-index">05</span>
+          <h2 id="references-h" class="block-title">References &amp; Peer Validation</h2>
+        </header>
+        <p class="references-intro" data-reveal>Selected independent professional recommendations from leaders and colleagues who have worked with Giorgio across enterprise AI adoption, Microsoft partner development and technology delivery.</p>
+        <div class="references-grid">
+          <article class="reference-card" data-reveal>
+            <span class="reference-tag">Enterprise AI Adoption</span>
+            <p class="reference-quote">His expertise was the driving force behind his success in a massive and complex initiative: leading the adoption of AI and Copilot for over 1,000 engineers in our organization.</p>
+            <div class="reference-name">Miguel Jiménez</div>
+            <p class="reference-role">Operating Partner, AI &amp; Systems<br>Socratix AI</p>
+          </article>
+          <article class="reference-card" data-reveal>
+            <span class="reference-tag">Microsoft Partner Leadership</span>
+            <p class="reference-quote">He makes sure that the communication and the collaboration between Microsoft and Channel partners are fluid and fast to maintain and grow customer satisfaction as high as possible.</p>
+            <div class="reference-name">Olgina Santikou</div>
+            <p class="reference-role">Marketing Leader, Device Partner Sales, DACH<br>Microsoft</p>
+          </article>
+          <article class="reference-card" data-reveal>
+            <span class="reference-tag">Strategic Delivery &amp; Mentorship</span>
+            <p class="reference-quote">His ability to balance technical insight with business priorities ensured that our projects were not just executed efficiently, but aligned with broader organizational goals.</p>
+            <div class="reference-name">Ronard Escleto</div>
+            <p class="reference-role">Technical Project Manager, Microsoft 365 &amp; Azure</p>
+          </article>
+        </div>
+        <div class="references-footer" data-reveal>
+          <span>Professional references available on request.</span>
+          <a class="btn btn-ghost" href="https://www.linkedin.com/in/george-tsoupis-ai-program-manager/details/recommendations/" target="_blank" rel="noopener noreferrer" data-cursor="link">View LinkedIn recommendations</a>
         </div>
       </section>
 
