@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Giorgio Tsoupis — Enterprise AI Adoption & Transformation Program Manager</title>
+<meta name="description" content="Interactive résumé of Giorgio (George) Tsoupis, Enterprise AI Adoption & AI Transformation Leader, Microsoft 365 Copilot adoption at scale, up to 98% active usage, 1M+ users influenced." />
+<meta name="author" content="Giorgio Tsoupis" />
+<meta name="theme-color" content="#0A0E1A" />
+<link rel="canonical" href="https://www.copilotadoption.uk/" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="profile" />
+<meta property="og:title" content="Giorgio Tsoupis — Enterprise AI Adoption & Transformation Program Manager" />
+<meta property="og:description" content="Microsoft 365 Copilot adoption at scale. 98% active usage, 1M+ users influenced, one of Europe's largest 2025 rollouts." />
+<meta property="og:image" content="assets/img/og-image.jpg" />
+<meta property="og:url" content="https://www.copilotadoption.uk/" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="assets/img/avatar-512.jpg" />
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="assets/css/styles.css" />
+<link rel="stylesheet" href="assets/css/hero-blend.css" />
+<link rel="stylesheet" href="assets/css/print.css" media="print" />
+
+<style>
+/* ===== Impact counters — CSS counter animation (no JS number formatting) ===== */
+@property --impact-trained { syntax: "<integer>"; initial-value: 1; inherits: false; }
+@property --impact-saved   { syntax: "<integer>"; initial-value: 1; inherits: false; }
+
+/* Close the dead space between the hero scroll hint and the counters */
+.hero { min-height: 92vh; }
+
+/* Two cards share the width of the old four-box row, never exceeding it */
+.metrics-duo {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 760px;
+  margin: -2rem auto 0; /* pull the row up toward the scroll hint */
+  padding-top: 2rem;
+}
+.metric-impact .metric-value {
+  white-space: nowrap;
+  font-size: clamp(1.5rem, 3.2vw, 2.75rem); /* one line, row height <= old boxes */
+}
+
+/* Static fallback (no-JS) is replaced by the animated counter once running */
+.metrics-duo.impact-run .impact-fallback { display: none; }
+
+.metrics-duo.impact-run .impact-count-trained {
+  animation: impactCountTrained 5s cubic-bezier(.22,.61,.36,1) both;
+  counter-reset: impactN var(--impact-trained);
+}
+.metrics-duo.impact-run .impact-count-saved {
+  animation: impactCountSaved 5s cubic-bezier(.22,.61,.36,1) both;
+  counter-reset: impactN var(--impact-saved);
+}
+.metrics-duo.impact-run .impact-count::after {
+  display: inline-block;
+  background: linear-gradient(135deg, #8b5cf6 0%, #22d3ee 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.metrics-duo.impact-run .impact-count-trained::after { content: counter(impactN) ",000+"; }
+.metrics-duo.impact-run .impact-count-saved::after   { content: counter(impactN) ",600 hr"; }
+
+@keyframes impactCountTrained { from { --impact-trained: 1; } to { --impact-trained: 38; } }
+@keyframes impactCountSaved   { from { --impact-saved: 1; }   to { --impact-saved: 2721; } }
+
+@media (max-width: 640px) {
+  .metrics-duo { grid-template-columns: 1fr; margin-top: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .metrics-duo.impact-run .impact-count-trained,
+  .metrics-duo.impact-run .impact-count-saved { animation-duration: 1.2s; }
+}
+
+/* ===== 05 · References & Peer Validation ===== */
+.references-intro{max-width:44rem;margin:0 0 2rem;color:var(--text-muted,#9ca3af);font-size:1rem;line-height:1.65}
+.references-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+.reference-card{display:flex;flex-direction:column;min-height:21rem;padding:1.5rem;border:1px solid rgba(255,255,255,.10);border-radius:1rem;background:rgba(255,255,255,.035)}
+.reference-tag{display:inline-flex;width:max-content;margin-bottom:1.15rem;padding:.38rem .62rem;border:1px solid rgba(34,211,238,.35);border-radius:999px;color:#22d3ee;font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.reference-quote{flex:1;margin:0;color:#e6edf7;font-size:.96rem;line-height:1.68}
+.reference-quote::before{content:"\201C";color:#8b5cf6;font-size:2rem;font-weight:700;line-height:0;vertical-align:-.4rem;margin-right:.15rem}
+.reference-name{margin-top:1.5rem;color:#fff;font-weight:700}
+.reference-role{margin:.2rem 0 0;color:var(--text-muted,#9ca3af);font-size:.8rem;line-height:1.45}
+.references-footer{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-top:1.5rem;color:var(--text-muted,#9ca3af);font-size:.83rem}
+@media(max-width:800px){.references-grid{grid-template-columns:1fr}.reference-card{min-height:auto}}
+</style>
+
+<!-- Structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Giorgio Tsoupis",
+  "alternateName": "George Tsoupis",
+  "jobTitle": "Enterprise AI Adoption & Transformation Program Manager",
+  "url": "https://www.copilotadoption.uk",
+  "address": { "@type": "PostalAddress", "addressLocality": "Warsaw", "addressCountry": "PL" },
+  "sameAs": [
+    "https://www.linkedin.com/in/george-tsoupis-ai-program-manager/",
+    "https://www.copilotadoption.uk"
+  ],
+  "knowsLanguage": ["English", "Italian", "Greek", "Spanish"]
+}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#experience">Skip to résumé content</a>
+
+<!-- Scroll progress -->
+<div class="scroll-progress" aria-hidden="true"><span id="progressBar"></span></div>
+
+<!-- Custom cursor -->
+<div class="cursor" id="cursorDot" aria-hidden="true"></div>
+<div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+
+<!-- Header -->
+<header class="site-header" id="siteHeader">
+  <a href="#top" class="brand" data-cursor="link">
+    <span class="brand-mark">GT</span>
+    <span class="brand-name">Giorgio Tsoupis</span>
+  </a>
+  <nav class="site-nav" aria-label="Primary">
+    <a href="#experience" data-cursor="link">Work</a>
+    <a href="#skills" data-cursor="link">Skills</a>
+    <a href="#about" data-cursor="link">About</a>
+    <a href="#contact" data-cursor="link">Contact</a>
+    <button type="button" class="nav-pdf" id="navPdf" data-cursor="link">Download CV</button>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero" aria-label="Introduction">
+    <div class="hero-grid">
+      <div class="hero-text">
+        <p class="eyebrow reveal" data-reveal>Curriculum Vitae</p>
+        <h1 class="hero-name">
+          <span class="line"><span class="line-inner">Giorgio</span></span>
+          <span class="line"><span class="line-inner">Tsoupis</span></span>
+        </h1>
+        <p class="hero-headline reveal" data-reveal>Enterprise AI Adoption &amp; Transformation Program Manager</p>
+        <p class="hero-summary reveal" data-reveal>Certified AI Transformation leader strong track of scaling Microsoft&nbsp;365 Copilot from pilot to governed production across four continents, influencing over one million users and sustaining up to 98% active adoption. Turning your AI strategy into measurable business value through stakeholder alignment, adoption telemetry, compliance-by-design governance, and role-based enablement.</p>
+        <ul class="chips reveal" data-reveal>
+          <li><span class="dot"></span>Warsaw, Poland</li>
+          <li><span class="dot"></span>Remote-first</li>
+          <li><span class="dot"></span>EU work rights</li>
+        </ul>
+        <div class="hero-cta reveal" data-reveal>
+          <a class="btn btn-primary" id="ctaWhatsapp" href="#" data-cursor="cta">
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M12.04 2c-5.5 0-9.96 4.46-9.96 9.96 0 1.76.46 3.45 1.34 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.5 0 9.96-4.46 9.96-9.96S17.54 2 12.04 2zm5.8 14.06c-.24.68-1.4 1.32-1.94 1.36-.5.05-.97.24-3.27-.68-2.76-1.09-4.5-3.94-4.64-4.13-.14-.19-1.11-1.48-1.11-2.82 0-1.34.7-2 .95-2.27.24-.27.53-.34.71-.34.18 0 .36 0 .51.01.16.01.39-.06.6.46.24.58.82 2 .89 2.14.07.14.12.31.02.5-.09.19-.14.31-.28.48-.14.17-.29.37-.42.5-.14.14-.28.29-.12.56.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.37.27.14.43.12.59-.07.16-.19.68-.79.86-1.06.18-.27.36-.22.6-.13.24.09 1.55.73 1.82.86.27.14.45.2.51.31.07.12.07.66-.17 1.34z"/></svg>
+            Send WhatsApp &amp; view full résumé
+          </a>
+          <a class="btn btn-secondary" id="ctaEmail" href="#" data-cursor="cta">
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm8 7L4.5 6.5v.01L12 11l7.5-4.49V6.5L12 11z"/></svg>
+            Send email &amp; view full résumé
+          </a>
+        </div>
+        <p class="hero-note reveal" data-reveal>Clicking a button opens your own WhatsApp or email app with a pre-filled message and reveals the full résumé on this page. It does <strong>not</strong> send anything automatically. No tracking, cookies, or third-party scripts are used.</p>
+        <ul class="hero-social reveal" data-reveal>
+          <li><a href="https://www.linkedin.com/in/george-tsoupis-ai-program-manager/" target="_blank" rel="noopener noreferrer" data-cursor="link">LinkedIn</a></li>
+          <li><a href="https://www.copilotadoption.uk" target="_blank" rel="noopener noreferrer" data-cursor="link">Website</a></li>
+          <li><a href="https://www.copilotadoption.uk" target="_blank" rel="noopener noreferrer" data-cursor="link" id="portfolioLink">Portfolio</a></li>
+        </ul>
+      </div>
+      <div class="hero-media reveal" data-reveal>
+        <div class="portrait-frame" data-cursor="media">
+
+          <!-- Duotone environment layer (sits behind the photo) -->
+          <span class="hero-scene" aria-hidden="true"></span>
+
+          <!-- Original photo — face & hair untouched, edges feathered in the PNG -->
+          <img
+            src="assets/img/portrait-blend.png"
+            alt="Portrait of Giorgio Tsoupis in a blue suit"
+            width="1366" height="2048" loading="eager" decoding="async" />
+
+          <!-- Orbital accent ring -->
+          <svg class="hero-orbit" viewBox="0 0 100 100" aria-hidden="true">
+            <defs>
+              <linearGradient id="heroOrbitGrad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0"   stop-color="#22d3ee" stop-opacity="0.0"/>
+                <stop offset="0.5" stop-color="#8b5cf6" stop-opacity="0.8"/>
+                <stop offset="1"   stop-color="#22d3ee" stop-opacity="0.0"/>
+              </linearGradient>
+            </defs>
+            <circle cx="50" cy="50" r="48"/>
+            <circle class="node" cx="98" cy="50" r="1.4"/>
+            <circle class="node" cx="50" cy="2"  r="1.1"/>
+          </svg>
+
+          <!-- Floating credibility micro-card -->
+          <div class="hero-tag" aria-hidden="true">
+            <span class="tag-ico">
+              <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4L12 2z"/></svg>
+            </span>
+            <span>
+              <span class="tag-title">AI Adoption at Scale</span><br>
+              <span class="tag-sub">Turning strategy into impact</span>
+            </span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="scroll-hint" aria-hidden="true"><span>Scroll</span><i></i></div>
+  </section>
+
+  <!-- METRICS: two animated CSS counters (replaces the four stat boxes) -->
+  <section class="metrics metrics-duo" id="impactStats" aria-label="Key results">
+    <div class="metric metric-impact" data-reveal>
+      <div class="metric-value impact-count impact-count-trained"><span class="impact-fallback">38,000+</span></div>
+      <div class="metric-label">Professionals Trained</div>
+    </div>
+    <div class="metric metric-impact" data-reveal>
+      <div class="metric-value impact-count impact-count-saved"><span class="impact-fallback">2,721,600 hr</span></div>
+      <div class="metric-label">Annual Time Saved</div>
+    </div>
+  </section>
+
+  <!-- RESUME (gated / blurred until unlocked) -->
+  <div class="resume-wrap" id="resumeWrap">
+    <div class="resume-gate" id="resumeGate" role="region" aria-label="Reveal full résumé">
+      <div class="gate-inner">
+        <p class="gate-kicker">Full résumé</p>
+        <h2 class="gate-title">Reveal the complete résumé</h2>
+        <p class="gate-text">Choose how you would like to reach out. Either button unlocks the entire résumé below and opens a pre-filled message in your own app. Nothing is sent automatically.</p>
+        <div class="gate-cta">
+          <a class="btn btn-primary" id="gateWhatsapp" href="#" data-cursor="cta">Message on WhatsApp &amp; unlock</a>
+          <a class="btn btn-secondary" id="gateEmail" href="#" data-cursor="cta">Email &amp; unlock</a>
+        </div>
+        <button type="button" class="gate-skip" id="gateSkip" data-cursor="link">Just view the résumé</button>
+      </div>
+    </div>
+
+    <div class="resume" id="resume" aria-hidden="false">
+
+      <!-- Toolbar -->
+      <div class="resume-toolbar" id="resumeToolbar">
+        <span class="toolbar-label">Résumé</span>
+        <button type="button" class="btn btn-ghost" id="pdfBtn" data-cursor="cta">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 3v10.5l3.5-3.5 1.4 1.4-5.9 5.9-5.9-5.9L6.5 10 10 13.5V3h2zM5 19h14v2H5z"/></svg>
+          Export to PDF
+        </button>
+        <a class="btn btn-primary" id="bookCallBtn" data-cursor="cta"
+           href="https://outlook.office.com/bookwithme/user/e53bcdeb6d7a4b50a27a0711dd6d751f@externals.hilti.com?anonymous&ismsaljsauthenabled&ep=bwmEmailSignature"
+           target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 16H5V10h14v10zM5 8V6h14v2H5z"/></svg>
+          Book a Call
+        </a>
+      </div>
+
+      <!-- EXPERIENCE -->
+      <section id="experience" class="block" aria-labelledby="experience-h">
+        <header class="block-head" data-reveal>
+          <span class="block-index">01</span>
+          <h2 id="experience-h" class="block-title">Experience</h2>
+        </header>
+
+        <!-- BUILD:EXPERIENCE:START -->
+        <article class="exp-item" data-reveal>
+          <div class="exp-top">
+            <div class="exp-title"><strong>Copilot Adoption Lead</strong> · <span class="exp-company">Hilti Corporation</span></div>
+            <div class="exp-dates">Sep 2025 — Present</div>
+          </div>
+          <div class="exp-loc">Schaan, Liechtenstein (Remote)</div>
+          <p class="exp-lead">Led the enterprise-wide Microsoft 365 Copilot adoption program for a complex global manufacturer operating in 120+ countries and all major markets, overseeing an €11M+ AI investment and delivering one of Europe's largest Copilot rollouts in 2025.</p>
+          <p class="exp-subhead">Responsibilities &amp; outcomes</p>
+          <ul class="exp-bullets">
+            <li>Delivered key outcomes: 98% active usage across licensed cohorts, 62% of employees using Copilot multiple times daily, 70% reporting 30 to 120 minutes saved per week, and 98% of business units retaining licenses at full cost, with 224,000+ Copilot actions logged and a 9.36 out of 10 end-user importance score.</li>
+            <li>Designed and ran an ADKAR-based change program, applying Kotter 8-Step to secure executive sponsorship and cultural embedding, mapping 30,000 employees into five readiness zones and achieving 70% daily active usage in Month 1 against a 60% target.</li>
+            <li>Architected pre-deployment governance with Microsoft Purview, DLP, sensitivity labels, and SharePoint access reviews, supported by technical, data, and organizational readiness audits, with zero compliance or security incidents.</li>
+            <li>Defined a company-wide Copilot prompt standard and role libraries for eight key functions, built a 1:50 cross-functional Champion Network, and instituted monthly Copilot business impact reports.</li>
+            <li>Achieved 90%+ training completion in Month 1 against a 75% target, establishing the adoption foundation for the organization's June 2026 announcement of Microsoft Copilot Premium for every employee globally, a program that exceeded the UK Government Digital Service's 20,000 Copilot Premium deployment.</li>
+          </ul>
+          <ul class="tags"><li>Microsoft 365 Copilot</li><li>Prosci ADKAR</li><li>Kotter 8-Step</li><li>Microsoft Purview</li><li>SharePoint governance</li><li>Viva Insights</li><li>Prompt engineering</li><li>Champion Network design</li><li>Executive communication</li><li>ROI analysis</li><li>Stakeholder management</li><li>Enterprise AI adoption</li><li>Organizational change</li></ul>
+        </article>
+
+        <article class="exp-item" data-reveal>
+          <div class="exp-top">
+            <div class="exp-title"><strong>Global Microsoft 365 Copilot Program Manager</strong> · <span class="exp-company">Microsoft Corporation</span></div>
+            <div class="exp-dates">Nov 2024 — Aug 2025</div>
+          </div>
+          <div class="exp-loc">Redmond, Washington (Remote)</div>
+          <p class="exp-lead">Drove AI-powered automation and operational efficiency across global teams supporting Microsoft 365 Copilot activation, growth, and renewal.</p>
+          <p class="exp-subhead">Responsibilities &amp; outcomes</p>
+          <ul class="exp-bullets">
+            <li>Operationalized Copilot Studio and Power Platform workflows in a 700+ engineer environment, reducing support ticket costs by 72% while maintaining service continuity.</li>
+            <li>Aligned AI delivery with business KPIs and service metrics, translating operational signals into executive-ready decision inputs for Microsoft 365 Copilot activation, growth, and renewal.</li>
+            <li>Coordinated execution across Microsoft and partner teams, improving rollout consistency, stakeholder alignment, and operational readiness.</li>
+            <li>Contributed to evaluation of AI pipeline options across Azure AI Foundry and related environments to inform Copilot Studio integration and LLM deployment decisions.</li>
+          </ul>
+          <ul class="tags"><li>Copilot Studio</li><li>Power Platform</li><li>Process automation</li><li>Executive reporting</li><li>KPI definition</li><li>Azure AI Foundry</li></ul>
+        </article>
+
+        <article class="exp-item" data-reveal>
+          <div class="exp-top">
+            <div class="exp-title"><strong>Global Business Development Manager, Microsoft Channel</strong> · <span class="exp-company">Noventiq (formerly Softline)</span></div>
+            <div class="exp-dates">Dec 2022 — Dec 2024</div>
+          </div>
+          <div class="exp-loc">London, United Kingdom (Remote)</div>
+          <p class="exp-lead">Drove Microsoft's global CSP business development across 14 companies within the Noventiq group, integrating Microsoft 365 Copilot and AI solutions into go-to-market.</p>
+          <p class="exp-subhead">Responsibilities &amp; outcomes</p>
+          <ul class="exp-bullets">
+            <li>Established Microsoft 365 Copilot delivery across 55+ countries and 14 companies, providing consistent regional coordination in the global CSP channel.</li>
+            <li>Operationalized adoption and expansion go-to-market programs with structured execution controls, improving conversion rates and reducing acquisition costs.</li>
+            <li>Contributed to 33% year-over-year gross profit growth by coaching a global remote sales and technical team, improving productivity and customer retention.</li>
+            <li>Standardized enablement through multilingual Copilot handbooks and virtual programs, improving readiness across distributed teams.</li>
+          </ul>
+          <ul class="tags"><li>Global GTM</li><li>CSP channel</li><li>Copilot enablement</li><li>Team coaching</li><li>Revenue growth</li></ul>
+        </article>
+
+        <div class="earlier" data-reveal>
+          <h3 class="earlier-title">Earlier experience</h3>
+          <ul class="earlier-list">
+            <li><div class="earlier-role"><strong>Cloud Partner Development Manager</strong> · Microsoft Corporation</div><div class="earlier-meta">Central &amp; Eastern Europe · Jul 2017 — Apr 2020</div><p>Activated 100+ ISVs and 90 SMB providers, contributing to 100%+ Azure consumption growth; 11 consecutive quarters of quota attainment.</p></li>
+            <li><div class="earlier-role"><strong>Senior Partnerships Development Manager</strong> · InterWorks.Cloud</div><div class="earlier-meta">Athens, Greece · Mar 2020 — Nov 2022</div><p>Increased revenue by 30% and onboarded 150+ channel partners and ISVs. Concurrent with the Huawei part-time role.</p></li>
+            <li><div class="earlier-role"><strong>Regional Business Development Manager (Part-Time)</strong> · Huawei Consumer Business Group</div><div class="earlier-meta">Warsaw, Poland · Apr 2020 — Dec 2021</div><p>Grew monthly active users by 87.5% and revenue by 40% across 13 countries. Concurrent with the InterWorks.Cloud role.</p></li>
+          </ul>
+        </div>
+        <!-- BUILD:EXPERIENCE:END -->
+      </section>
+
+      <!-- SKILLS -->
+      <section id="skills" class="block" aria-labelledby="skills-h">
+        <header class="block-head" data-reveal>
+          <span class="block-index">02</span>
+          <h2 id="skills-h" class="block-title">Capabilities</h2>
+        </header>
+        <!-- BUILD:SKILLS:START -->
+        <div class="skills-grid">
+          <div class="skill-card" data-reveal><h3>Enterprise AI Adoption</h3><ul><li>Microsoft 365 Copilot</li><li>Copilot Studio</li><li>Copilot Chat</li><li>Champion Communities</li><li>ADKAR Change Enablement</li><li>Kotter 8-Step</li></ul></div>
+          <div class="skill-card" data-reveal><h3>AI Governance &amp; Operating Models</h3><ul><li>License Governance</li><li>Responsible AI Controls</li><li>Compliance-by-Design</li><li>Microsoft Purview</li><li>EU Data Boundary Awareness</li><li>Adoption Policies</li></ul></div>
+          <div class="skill-card" data-reveal><h3>Program &amp; Product Execution</h3><ul><li>PoC-to-Production Delivery</li><li>KPI Definition</li><li>Executive Reporting</li><li>Stakeholder Alignment</li><li>Roadmap Ownership</li><li>Backlog Prioritization</li></ul></div>
+          <div class="skill-card" data-reveal><h3>Technical Fluency</h3><ul><li>Telemetry &amp; Adoption Analytics</li><li>Viva Insights</li><li>Power Platform</li><li>Microsoft Entra</li><li>Azure AI Foundry</li><li>LLM Applications</li></ul></div>
+        </div>
+        <!-- BUILD:SKILLS:END -->
+      </section>
+
+      <!-- PORTFOLIO / PROJECTS -->
+      <section id="portfolio" class="block" aria-labelledby="portfolio-h">
+        <header class="block-head" data-reveal>
+          <span class="block-index">03</span>
+          <h2 id="portfolio-h" class="block-title">Portfolio</h2>
+        </header>
+        <a class="portfolio-card" href="https://www.copilotadoption.uk" target="_blank" rel="noopener noreferrer" data-reveal data-cursor="cta">
+          <div class="portfolio-copy">
+            <h3>copilotadoption.uk</h3>
+            <p>Keynotes, workshops, enablement programs, and case studies on Microsoft&nbsp;365 Copilot adoption and change management. Visit the full portfolio and speaking page.</p>
+            <span class="portfolio-link">Open portfolio
+              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M7 17L17 7M9 7h8v8"/></svg>
+            </span>
+          </div>
+        </a>
+      </section>
+
+      <!-- EDUCATION & CERTS -->
+      <section id="about" class="block" aria-labelledby="about-h">
+        <header class="block-head" data-reveal>
+          <span class="block-index">04</span>
+          <h2 id="about-h" class="block-title">Education &amp; Certifications</h2>
+        </header>
+        <div class="two-col">
+          <div data-reveal>
+            <h3 class="col-title">Education</h3>
+            <ul class="plain-list"><li>Master's Degree in International Relations</li></ul>
+            <h3 class="col-title">Languages</h3>
+            <ul class="lang-list">
+              <li><span>English</span><em>Full Professional</em></li>
+              <li><span>Italian</span><em>Native / Bilingual</em></li>
+              <li><span>Greek</span><em>Native / Bilingual</em></li>
+              <li><span>Spanish</span><em>Learning</em></li>
+            </ul>
+          </div>
+          <div data-reveal>
+            <h3 class="col-title">Microsoft Copilot &amp; AI</h3>
+            <ul class="plain-list">
+              <li>Certified Microsoft AI transformation Leader ( 2026)</li>
+              <li>Microsoft Copilot Sales Champion</li>
+              <li>Copilot for Microsoft 365 Technical Champion</li>
+              <li>Copilot Partner Bootcamp</li>
+              <li>Microsoft 365 Business Value Sales Proficiency</li>
+              <li>Implement Copilot for Microsoft 365</li>
+              <li>Fundamental AI Concepts</li>
+              <li>Career Essentials in Generative AI</li>
+              <li>Building in Microsoft Copilot Studio</li>
+              <li>Learning Microsoft 365 Copilot</li>
+            </ul>
+            <h3 class="col-title">Change Management &amp; Leadership</h3>
+            <ul class="plain-list">
+              <li>Management Excellence at Microsoft: Model, Coach, Care</li>
+              <li>Persuasive Coaching: Coaching with Influence</li>
+              <li>Working in Harmony as a Senior Team</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- REFERENCES & PEER VALIDATION -->
+      <section id="references" class="block" aria-labelledby="references-h">
+        <header class="block-head" data-reveal>
+          <span class="block-index">05</span>
+          <h2 id="references-h" class="block-title">References &amp; Peer Validation</h2>
+        </header>
+        <p class="references-intro" data-reveal>Selected independent professional recommendations from leaders and colleagues who have worked with Giorgio across enterprise AI adoption, Microsoft partner development and technology delivery.</p>
+        <div class="references-grid">
+          <article class="reference-card" data-reveal>
+            <span class="reference-tag">Enterprise AI Adoption</span>
+            <p class="reference-quote">His expertise was the driving force behind his success in a massive and complex initiative: leading the adoption of AI and Copilot for over 1,000 engineers in our organization.</p>
+            <div class="reference-name">Miguel Jiménez</div>
+            <p class="reference-role">Operating Partner, AI &amp; Systems<br>Socratix AI</p>
+          </article>
+          <article class="reference-card" data-reveal>
+            <span class="reference-tag">Microsoft Partner Leadership</span>
+            <p class="reference-quote">He makes sure that the communication and the collaboration between Microsoft and Channel partners are fluid and fast to maintain and grow customer satisfaction as high as possible.</p>
+            <div class="reference-name">Olgina Santikou</div>
+            <p class="reference-role">Marketing Leader, Device Partner Sales, DACH<br>Microsoft</p>
+          </article>
+          <article class="reference-card" data-reveal>
+            <span class="reference-tag">Strategic Delivery &amp; Mentorship</span>
+            <p class="reference-quote">His ability to balance technical insight with business priorities ensured that our projects were not just executed efficiently, but aligned with broader organizational goals.</p>
+            <div class="reference-name">Ronard Escleto</div>
+            <p class="reference-role">Technical Project Manager, Microsoft 365 &amp; Azure</p>
+          </article>
+        </div>
+        <div class="references-footer" data-reveal>
+          <span>Professional references available on request.</span>
+          <a class="btn btn-ghost" href="https://www.linkedin.com/in/george-tsoupis-ai-program-manager/details/recommendations/" target="_blank" rel="noopener noreferrer" data-cursor="link">View LinkedIn recommendations</a>
+        </div>
+      </section>
+
+    </div><!-- /.resume -->
+  </div><!-- /.resume-wrap -->
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact" aria-labelledby="contact-h">
+    <p class="eyebrow reveal" data-reveal>Get in touch</p>
+    <h2 id="contact-h" class="contact-title reveal" data-reveal>Let's discuss your Copilot adoption</h2>
+    <div class="contact-cta reveal" data-reveal>
+      <a class="btn btn-primary btn-lg" id="footerWhatsapp" href="#" data-cursor="cta">Message on WhatsApp</a>
+      <a class="btn btn-secondary btn-lg" id="footerEmail" href="#" data-cursor="cta">Send an email</a>
+    </div>
+    <p class="contact-alt reveal" data-reveal>WhatsApp <span id="waNumber">+48 577 654 530</span> · <a href="mailto:george@copilotadoption.uk" data-cursor="link">george@copilotadoption.uk</a></p>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span>© <span id="year">2026</span> Giorgio Tsoupis</span>
+      <div class="footer-links">
+        <a href="privacy.html" data-cursor="link">Privacy</a>
+        <a href="https://www.copilotadoption.uk" target="_blank" rel="noopener noreferrer" data-cursor="link">copilotadoption.uk</a>
+        <a href="#top" data-cursor="link">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+</main>
+
+<!-- Floating WhatsApp -->
+<a class="fab-whatsapp" id="fabWhatsapp" href="#" aria-label="Message Giorgio on WhatsApp" data-cursor="cta">
+  <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path fill="currentColor" d="M12.04 2c-5.5 0-9.96 4.46-9.96 9.96 0 1.76.46 3.45 1.34 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.5 0 9.96-4.46 9.96-9.96S17.54 2 12.04 2zm5.8 14.06c-.24.68-1.4 1.32-1.94 1.36-.5.05-.97.24-3.27-.68-2.76-1.09-4.5-3.94-4.64-4.13-.14-.19-1.11-1.48-1.11-2.82 0-1.34.7-2 .95-2.27.24-.27.53-.34.71-.34.18 0 .36 0 .51.01.16.01.39-.06.6.46.24.58.82 2 .89 2.14.07.14.12.31.02.5-.09.19-.14.31-.28.48-.14.17-.29.37-.42.5-.14.14-.28.29-.12.56.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.37.27.14.43.12.59-.07.16-.19.68-.79.86-1.06.18-.27.36-.22.6-.13.24.09 1.55.73 1.82.86.27.14.45.2.51.31.07.12.07.66-.17 1.34z"/></svg>
+</a>
+
+<script src="assets/js/main.js" defer></script>
+<script>
+/* Impact counters: count up when the stats scroll into view.
+   Primary path: pure CSS counter animation (@property + keyframes + counter-reset).
+   Fallback path (browsers without @property): rAF-driven text update.
+   Reduced motion: same animation, shortened to 1.2s. */
+(function () {
+  var section = document.getElementById('impactStats');
+  if (!section) return;
+
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var DURATION = reduced ? 1200 : 5000;
+
+  function jsCount() {
+    var items = [
+      { el: section.querySelector('.impact-count-trained .impact-fallback'), target: 38000, suffix: '+' },
+      { el: section.querySelector('.impact-count-saved .impact-fallback'),   target: 2721600, suffix: ' hr' }
+    ];
+    var t0 = null;
+    function tick(t) {
+      if (!t0) t0 = t;
+      var p = Math.min((t - t0) / DURATION, 1);
+      var e = 1 - Math.pow(1 - p, 3);
+      items.forEach(function (it) {
+        it.el.textContent = Math.round(1 + e * (it.target - 1)).toLocaleString('en-US') + it.suffix;
+      });
+      if (p < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+
+  function start() {
+    if (window.CSS && typeof CSS.registerProperty === 'function') {
+      section.classList.add('impact-run');
+    } else {
+      jsCount();
+    }
+  }
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) { start(); io.disconnect(); }
+    });
+  }, { threshold: 0.2 });
+  io.observe(section);
+})();
+</script>
+</body>
+</html>
